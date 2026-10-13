@@ -3,23 +3,28 @@ set -euo pipefail
 
 repo_id="${1:?usage: scripts/upload_large_assets_to_hf.sh <namespace/repo> [dataset|model]}"
 repo_type="${2:-dataset}"
+token_args=()
+
+if [ -n "${HF_TOKEN:-}" ]; then
+  token_args=(--token "$HF_TOKEN")
+fi
 
 if ! command -v hf >/dev/null 2>&1; then
   echo "hf CLI is required. Install or activate huggingface_hub first." >&2
   exit 1
 fi
 
-if ! hf auth whoami >/dev/null 2>&1; then
-  echo "Hugging Face CLI is not logged in. Run: hf auth login" >&2
+if ! hf auth whoami "${token_args[@]}" >/dev/null 2>&1; then
+  echo "Hugging Face CLI is not logged in. Run: hf auth login, or set HF_TOKEN." >&2
   exit 1
 fi
 
-hf repo create "$repo_id" --type "$repo_type" --exist-ok
+hf repo create "$repo_id" --type "$repo_type" --exist-ok "${token_args[@]}"
 
 upload_path() {
   local path="$1"
   if [ -e "$path" ]; then
-    hf upload "$repo_id" "$path" "$path" --repo-type "$repo_type"
+    hf upload "$repo_id" "$path" "$path" --repo-type "$repo_type" "${token_args[@]}"
   fi
 }
 
@@ -47,7 +52,7 @@ find . -maxdepth 3 -type f \( \
     checkpoints/*|data/*|testset/*|results/*|output/*|output_runs_correct/*|adv_outputs/*|common_perb/*|ddta/*|new/test_runs/*|newest/output/*|robot/pace_gen_transfer.tar.gz)
       ;;
     *)
-      hf upload "$repo_id" "$rel" "$rel" --repo-type "$repo_type"
+      hf upload "$repo_id" "$rel" "$rel" --repo-type "$repo_type" "${token_args[@]}"
       ;;
   esac
 done
