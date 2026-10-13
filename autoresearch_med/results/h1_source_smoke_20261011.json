@@ -1,0 +1,34 @@
+{
+  "status": "source_pipeline_feasible_not_a_mechanism_result",
+  "date": "2026-10-11",
+  "dataset": "ISIC2016_Test",
+  "indices": [220],
+  "data_status": "development_contaminated",
+  "target_access": false,
+  "candidate_generation": "reused_frozen_images",
+  "budget": {
+    "epsilon_255": 10.0,
+    "observed_linf_255": 10.000007003545761,
+    "tolerance": 0.0001,
+    "passed": true
+  },
+  "primary_discrete_estimator": {
+    "carrier_mean_consistency": 0.695624259858025,
+    "joint_mean_consistency": 0.7263232771052344,
+    "max_telescoping_residual_ratio": 4.6778828311353366e-08
+  },
+  "directional_derivative_diagnostic": {
+    "mean_consistency": 0.6391941853992118,
+    "max_quadrature_residual_ratio": 0.3258601205279718,
+    "accepted_for_mechanism_claims": false
+  },
+  "negative_control": {
+    "mean_alternating_sign_consistency": 0.3200817887543214
+  },
+  "decision": "Keep the telescoping discrete estimator. Do not use coarse Jacobian quadrature for claims. Proceed to four development cases without target evaluation.",
+  "sha256": {
+    "raw_result": "f4ec9e50ad693d889e79b5648545846b61404e6089add0cd7e84dcf4f7931aef",
+    "analyzer": "0503e71078ff17a8cae44912d1488f63854cc406338d6c31924b407b969c9d40",
+    "mechanism": "32f9a936c8197ad1576333f4baf1909ab85b1517f2e1381b544bd8577ca71797"
+  }
+}

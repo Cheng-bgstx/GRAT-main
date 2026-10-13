@@ -1,0 +1,23 @@
+{
+  "target": "samed",
+  "ckpt_fs": "/root/data2/fyc/fyc/GRAT-main/checkpoints/sam_vit_l_0b3195.pth",
+  "lora_ckpt": "/root/data2/fyc/fyc/GRAT-main/OUT_ROOT/SAMed/isic_512_pretrain_vit_l_epo200_bs16_lr0.005/epoch_159.pth",
+  "msa_ckpt": "",
+  "sam_ckpt_msa": "",
+  "img_size": 512,
+  "num_classes": 1,
+  "rank": 4,
+  "multimask_output": 9,
+  "dataset_tag": "Synapse",
+  "num_images": 200,
+  "data_path": "/root/data2/fyc/fyc/GRAT-main/data/ISIC",
+  "batch_size": 4,
+  "block_indices": "0,5,11,17,23",
+  "mask_tau": 0.001,
+  "tau_sweep": "1e-4,1e-3,1e-2",
+  "use_log_amp": false,
+  "preprocess": "synapse",
+  "out_dir": "/root/data2/fyc/fyc/GRAT-main/experiments/spectral_hypothesis/outputs_samed_vitL_isic_realdata",
+  "device": "cuda",
+  "note": "Block hooks: ViT Block forward output after full residual (matches root SAM feature_layer). Preprocess: same pixel_mean/std for f_s and f_t; MSA uses same x_in as SAM (no separate net.preprocess). Mode=synapse."
+}

@@ -1,0 +1,70 @@
+{
+  "status": "frozen_joint_objective_fresh_image_gate_passed_untouched_victim_pending",
+  "date": "2026-10-11",
+  "dataset": "ISIC",
+  "backbone": "vit_b",
+  "indices": [220, 221, 222, 223],
+  "attack": {
+    "name": "pareto_constrained_dual_peft_joint_family_objective",
+    "beta": 0.8,
+    "samed_weight": 0.75,
+    "steps": 10,
+    "step_size_255": 2,
+    "linf_255": 10,
+    "target_checkpoints_used_during_generation": false,
+    "test_ground_truth_used_during_generation": false
+  },
+  "seed45_targets": {
+    "samed_checkpoint": "output_runs_correct/SAMed_pareto_dev/isic_512_lrexp0.9_pretrain_vit_b_bs12_lr0.005_s45/epoch_29.pth",
+    "medsa_checkpoint": "output_runs_correct/MedicalSAMAdapter_pareto_dev/isic_512_pretrain_vit_b_epo10_bs24_lr0.0001_s45/Model/epoch_10.pth",
+    "samed": {
+      "clean_dice": 0.9400681498133243,
+      "carrier_dice": 0.8255350987756226,
+      "joint_dice": 0.556942004806146,
+      "joint_wins_vs_carrier": 4,
+      "cases": 4
+    },
+    "medsa_paired": {
+      "clean_dice": 0.9183971285820007,
+      "carrier_dice": 0.6335529319941997,
+      "joint_dice": 0.26059910878539083,
+      "joint_wins_vs_carrier": 4,
+      "cases": 4
+    }
+  },
+  "rank16_default_targets": {
+    "samed_checkpoint": "checkpoints/samed_isic/isic_512_pretrain_vit_b_epo200_bs12_lr0.0001/epoch_99.pth",
+    "medsa_checkpoint": "checkpoints/best_weights/MSA_ISIC_vit_b.pth",
+    "samed": {
+      "clean_dice": 0.9366958119332918,
+      "carrier_dice": 0.7507276726643859,
+      "joint_dice": 0.523603963369463,
+      "joint_wins_vs_carrier": 4,
+      "cases": 4
+    },
+    "medsa_paired": {
+      "clean_dice": 0.9196540385484695,
+      "carrier_dice": 0.6665294945240021,
+      "joint_dice": 0.23607881031930447,
+      "joint_wins_vs_carrier": 4,
+      "cases": 4
+    }
+  },
+  "budget_audit": {
+    "max_linf_255": 10.000006675720215,
+    "npy_pixels_over_10_0001_255": 0,
+    "png_pixels_over_10_0001_255": 0
+  },
+  "evidence_limits": [
+    "The four images were not used in the earlier 200..219 method-comparison set.",
+    "The evaluated target checkpoints were used in prior diagnostics, so this is not an untouched-victim result.",
+    "The Pareto constraints are first-order and proxy-relative, not a victim certificate.",
+    "No full-dataset, cross-dataset or cross-backbone claim follows from this gate."
+  ],
+  "source_sha256": {
+    "seed45_official": "2959cb8d5958d6c0281a6aecc4c4850ed95ae1b5aafe18e7dbb032528d6a37cf",
+    "rank16_default_official": "c48f3b6aabf9bfed9ba30e86b1fd7dde98d7c2dc71422e8ac904003ce2db491a",
+    "joint_generation": "70e33ef618b0270e52bab662716067c1a36602c80129ccca4803f70723980f80",
+    "carrier_generation": "ce559360070ef235cb1660828cb1c0ca6168b72de3a5b51e9f296072cd147dd7"
+  }
+}

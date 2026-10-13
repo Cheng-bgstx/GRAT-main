@@ -1,0 +1,36 @@
+{
+  "victims": [
+    "ISIC_ISIC_MSA",
+    "ISIC_ISIC_SAMed",
+    "REFUGE_REFUGE_MSA",
+    "REFUGE_REFUGE_SAMed",
+    "Synapse_Synapse_MSA",
+    "Synapse_Synapse_SAMed"
+  ],
+  "modes": [
+    "vit_b_isotropic",
+    "vit_b_misaligned",
+    "vit_b_radial",
+    "vit_b_tangential",
+    "vit_h_radial",
+    "vit_l_radial"
+  ],
+  "table": {
+    "ISIC_ISIC_MSA": {},
+    "ISIC_ISIC_SAMed": {},
+    "REFUGE_REFUGE_MSA": {},
+    "REFUGE_REFUGE_SAMed": {},
+    "Synapse_Synapse_MSA": {},
+    "Synapse_Synapse_SAMed": {}
+  },
+  "aggregates": {
+    "overall": {
+      "mean": NaN,
+      "std": NaN,
+      "n": 0
+    },
+    "by_vit": {},
+    "by_method": {},
+    "by_dataset": {}
+  }
+}

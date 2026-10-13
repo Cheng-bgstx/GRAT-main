@@ -1,0 +1,15 @@
+{
+  "candidate": "autoresearch_med/candidates/active.py",
+  "candidate_sha256": "409ce56739e26dd1f5e1a41282f66708878b72ac74f1159a1655d70617868e6f",
+  "config": "autoresearch_med/configs/development.yaml",
+  "config_sha256": "cbd4eab28d00bac5c2ab4ebce8790b48229acff0303d890f348f4904057803ea",
+  "created_utc": "2026-10-11T15:25:38.092060+00:00",
+  "git": {
+    "commit": "HEAD",
+    "dirty_sha256": "34c32ad650222c1141e53c6b55c093c97d4228503d098cda35ca8df7ac2234cc"
+  },
+  "run_id": "phase0-20261011",
+  "schema_version": 1,
+  "status": "registered_not_executed",
+  "tier": 0
+}

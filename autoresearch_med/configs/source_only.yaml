@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "backbone": "vit_b",
+  "source_checkpoint": "checkpoints/sam_vit_b_01ec64.pth",
+  "image_size": 512,
+  "steps": 10,
+  "step_size_255": 2.0,
+  "epsilon_255": 10.0,
+  "seed": 42,
+  "allowed_online_inputs": ["current_image", "public_base_sam"],
+  "forbidden_online_inputs": ["medical_checkpoint", "medical_label", "target_query", "target_metric", "medical_proxy"],
+  "frequency_policy": "diagnostic_spatial_hw_only"
+}

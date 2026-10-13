@@ -1,0 +1,121 @@
+{
+  "status": "joint_dual_peft_small_gate_passed_final_untouched_gate_pending",
+  "threat_model": "public medical training proxies, zero victim queries during generation",
+  "dataset": "ISIC",
+  "backbone": "vit_b",
+  "indices": "200..219",
+  "attack": {
+    "name": "pareto_constrained_dual_peft_joint_family_objective",
+    "beta": 0.8,
+    "joint_lora_adapter_max_min": true,
+    "steps": 10,
+    "step_size_255": 2,
+    "linf_255": 10
+  },
+  "contaminated_same_trajectory_diagnostic": {
+    "samed": {
+      "carrier_dice": 0.18669816955333224,
+      "pareto_dice": 0.2311436071207668,
+      "pareto_wins": 5,
+      "cases": 20,
+      "valid_transfer_evidence": false,
+      "reason": "The victim is seed-1234 epoch 99 from the same run as the epoch-79/119 midpoint proxy."
+    },
+    "medsa": {
+      "carrier_paired_mean_dice": 0.6779919931292533,
+      "pareto_paired_mean_dice": 0.23200988108292225,
+      "pareto_wins": 20,
+      "cases": 20
+    }
+  },
+  "independent_rank16_samed": {
+    "checkpoint": "lr0.0001_rank16_epoch99",
+    "clean_dice": 0.9120136461660145,
+    "carrier_dice": 0.8181481636859285,
+    "pareto_dice": 0.7131285946835255,
+    "pareto_wins": 16,
+    "cases": 20,
+    "assessment": "valid transfer but too weak for the final dual-target goal"
+  },
+  "joint_objective_gate": {
+    "development_indices": "200..203",
+    "frozen_confirmation_indices": "204..219",
+    "confirmation_cases": 16,
+    "confirmation": {
+      "samed": {
+        "carrier_dice": 0.8414092745810497,
+        "original_pareto_dice": 0.7447605534002152,
+        "joint_dice": 0.558147959741174,
+        "joint_hd95": 161.4955447894521,
+        "joint_wins_vs_original_pareto": 13,
+        "joint_wins_vs_carrier": 16
+      },
+      "medsa": {
+        "carrier_paired_mean_dice": 0.721078732982278,
+        "original_pareto_paired_mean_dice": 0.24766475942451505,
+        "joint_paired_mean_dice": 0.3112958365119993,
+        "joint_paired_mean_hd95": 132.6375691512759,
+        "joint_wins_vs_original_pareto": 4,
+        "joint_wins_vs_carrier": 16
+      }
+    },
+    "full_20_image_diagnostic": {
+      "samed": {
+        "clean_dice": 0.9120136461660143,
+        "carrier_dice": 0.8181481636859285,
+        "original_pareto_dice": 0.7131285946835255,
+        "joint_dice": 0.5354691949008735,
+        "joint_hd95": 160.49615979151335,
+        "joint_wins_vs_original_pareto": 17,
+        "joint_wins_vs_carrier": 20
+      },
+      "medsa": {
+        "clean_paired_mean_dice": 0.9009987211227418,
+        "carrier_paired_mean_dice": 0.6875014236569406,
+        "original_pareto_paired_mean_dice": 0.23653444202616808,
+        "joint_paired_mean_dice": 0.2886357739940285,
+        "joint_paired_mean_hd95": 133.5141103397488,
+        "joint_wins_vs_original_pareto": 5,
+        "joint_wins_vs_carrier": 20
+      }
+    },
+    "assessment": "current best supported dual-target candidate; frozen 16-image confirmation passed, but final untouched target evaluation is still required"
+  },
+  "independent_seed45_victims": {
+    "samed": {
+      "carrier_dice": 0.8298581414481203,
+      "pareto_dice": 0.8031788274001995,
+      "pareto_wins": 11,
+      "cases": 20
+    },
+    "medsa": {
+      "carrier_paired_mean_dice": 0.6843899729847908,
+      "pareto_paired_mean_dice": 0.28362115960568185,
+      "pareto_wins": 20,
+      "cases": 20
+    }
+  },
+  "budget_audit": {
+    "max_linf_255": 10.000006675720215,
+    "pixels_over_10_0001_255": 0
+  },
+  "evidence_limits": [
+    "The Pareto guarantee is first-order and proxy-relative, not a victim certificate.",
+    "The 20 images were used during method comparison and are not an untouched final test.",
+    "The original strong SAMed result used a victim from the same training trajectory as the proxy and is not valid transfer evidence.",
+    "Adapter transfer is consistent across both evaluated victims; the joint family objective materially improves corrected independent SAMed transfer while retaining a large Adapter effect.",
+    "Beta 0.8 is the best tested rank-16 SAMed/Med-SA tradeoff, so further beta tuning is not the next step.",
+    "The joint objective used indices 200..203 for development and 204..219 only for frozen confirmation, but the overall 20-image target set had been examined in earlier method comparisons.",
+    "Full ISIC and cross-dataset/backbone evaluation has not been run."
+  ],
+  "source_sha256": {
+    "default_official": "c23406ed63708e1094913ab3b7b30f51faf2cc25cc718099a4dfff5b1ee66c5c",
+    "adapter45_development": "8cf2f24e4a1a410efcac89f1a0a1d3fb6e3c4f605b849d5a1f5c246db731ceb9",
+    "joint_seed45": "fca1ae616b7fcafdc6dc2b836f3dfce1242f7682a614502e4aaf66a17fc06229"
+    ,"independent_rank16": "d996633470001ff89454dc4d61f750261bfa3d249f93977e142db541d3ba6f3c"
+    ,"rank16_beta_sweep": "5e21a02d346dd0bbddb865a2dc91f2e16398ae153d633ea22a8a9d4fb5c9d722"
+    ,"joint_objective_development4": "42ac5907138cf8e15446acc115dc3b5add56bd596d394bf646c81299ae7ecdca"
+    ,"joint_objective_confirmation16": "3b7fbf36457dc3e07452b2fed92b4e54baf5d857fedf2a6fae0db57bc11560f9"
+    ,"joint_objective_generator": "82a84285a9ce85ab604cfb2f48182057049dd91602cf2be45916217b78d6e352"
+  }
+}

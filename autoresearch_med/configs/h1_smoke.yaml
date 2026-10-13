@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "tier": 1,
+  "purpose": "H1 source-only numerical pipeline smoke test",
+  "dataset": "ISIC2016_Test",
+  "indices": [220],
+  "contaminated_data": true,
+  "eligible_for_method_selection": false,
+  "candidates": {
+    "carrier": "testset/isic_carrier_fresh4/W075",
+    "joint": "testset/isic_pareto_joint_fresh4/W075"
+  },
+  "path_samples": [0.0, 0.25, 0.5, 0.75, 1.0],
+  "derivative_step": 0.02,
+  "layers": [0, 5, 11, "neck"],
+  "target_access": false
+}

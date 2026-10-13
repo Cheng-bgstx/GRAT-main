@@ -1,0 +1,14 @@
+{
+  "SAMed_Syn_vit_b": 0.800962387362037,
+  "SAMed_Syn_vit_l": 0.7738207897628152,
+  "SAMed_Syn_vit_h": 0.8251152899904429,
+  "SAMed_ISIC_vit_b": 0.9309394304446463,
+  "SAMed_ISIC_vit_l": 0.9332927309301016,
+  "SAMed_ISIC_vit_h": 0.939805562467877,
+  "SAMed_REF_vit_b": 0,
+  "SAMed_REF_vit_l": 0,
+  "SAMed_REF_vit_h": 0,
+  "MSA_Syn_vit_b": 0.8890152831133362,
+  "MSA_Syn_vit_l": 0.9100252741957137,
+  "MSA_Syn_vit_h": 0.9222623909619758
+}

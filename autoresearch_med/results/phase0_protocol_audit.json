@@ -1,0 +1,17 @@
+{
+  "forbidden_imports": [],
+  "hash_mismatches": [],
+  "missing_paths": [],
+  "missing_samples": [],
+  "passed": true,
+  "rules": {
+    "candidate_import_boundary": true,
+    "checkpoint_hashes_match": true,
+    "confirmation_blocked_without_targets": true,
+    "declared_paths_exist": true,
+    "fixed_budget": true,
+    "partitions_disjoint": true,
+    "sample_identities_resolve": true,
+    "vit_b": true
+  }
+}

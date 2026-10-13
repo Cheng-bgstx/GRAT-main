@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "source": {
+    "sam_vit_b": "checkpoints/sam_vit_b_01ec64.pth"
+  },
+  "development_targets": {
+    "samed_rank16": "checkpoints/samed_isic/isic_512_pretrain_vit_b_epo200_bs12_lr0.0001/epoch_99.pth",
+    "samed_seed45": "output_runs_correct/SAMed_pareto_dev/isic_512_lrexp0.9_pretrain_vit_b_bs12_lr0.005_s45/epoch_29.pth",
+    "medsa_default": "checkpoints/best_weights/MSA_ISIC_vit_b.pth",
+    "medsa_seed45": "output_runs_correct/MedicalSAMAdapter_pareto_dev/isic_512_pretrain_vit_b_epo10_bs24_lr0.0001_s45/Model/epoch_10.pth"
+  },
+  "confirmation_targets": {},
+  "sha256": {
+    "sam_vit_b": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+    "samed_rank16": "49139c39e40b9e02273e67fb0b395ee06c4f08baf6bbcb05c534592c0e460d5c",
+    "samed_seed45": "903f010e6cd88f9d0a320d7c095679bb4e3b12516f51cee9c531a4aeb17f7e77",
+    "medsa_default": "91af99762fbb4ad28d030479de585c06035fe8e989d68d2cc24a0643871a9aee",
+    "medsa_seed45": "feca6978a704b0e17eacaf904b3eaf06d62e867334460780d26b15f40e035b53"
+  },
+  "resolved_paths": {
+    "medsa_default": "output_runs_correct/MedicalSAMAdapter/isic_512_pretrain_vit_b_epo100_bs24_lr0.0001_s24/Model/best_dice_checkpoint.pth"
+  },
+  "note": "Confirmation checkpoint lineages must be disjoint and added only before Tier 3 freeze; empty means confirmation is blocked."
+}

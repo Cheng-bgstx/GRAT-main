@@ -1,0 +1,147 @@
+{
+  "protocol": {
+    "dataset": "ISIC",
+    "vit": "vit_b",
+    "samed_checkpoint": "output_runs_correct/SAMed_pareto_dev/isic_512_lrexp0.9_pretrain_vit_b_bs12_lr0.005_s45/epoch_29.pth",
+    "medsa_checkpoint": "output_runs_correct/MedicalSAMAdapter_pareto_dev/isic_512_pretrain_vit_b_epo10_bs24_lr0.0001_s45/Model/epoch_10.pth",
+    "candidates": [
+      "ctearly010=autoresearch_med/artifacts/dev224_227/ctearly010"
+    ],
+    "max_cases": 4,
+    "indices": "224,225,226,227",
+    "device": "cuda:0",
+    "prompt_seed": 24,
+    "per_case_medsa": true,
+    "output": "autoresearch_med/results/dev224_227_ct010_seed45_official.json"
+  },
+  "cases": [
+    "ISIC_0010018",
+    "ISIC_0010020",
+    "ISIC_0010023",
+    "ISIC_0010028"
+  ],
+  "audit": {
+    "ctearly010": {
+      "npy_linf_255": 10.000006675720215,
+      "png_linf_255": 10.000006675720215,
+      "npy_pixels_over_budget": 0,
+      "png_pixels_over_budget": 0
+    }
+  },
+  "SAMed": {
+    "clean": {
+      "mean": {
+        "dice": 0.947768143671014,
+        "hd95": 17.728709751734506
+      },
+      "per_case": [
+        {
+          "case": "ISIC_0010018",
+          "dice": 0.9669389454341866,
+          "hd95": 8.071455423445379
+        },
+        {
+          "case": "ISIC_0010020",
+          "dice": 0.9052178801859768,
+          "hd95": 38.05258156459029
+        },
+        {
+          "case": "ISIC_0010023",
+          "dice": 0.946227423465892,
+          "hd95": 17.0
+        },
+        {
+          "case": "ISIC_0010028",
+          "dice": 0.9726883255980007,
+          "hd95": 7.790802018902353
+        }
+      ]
+    },
+    "ctearly010": {
+      "mean": {
+        "dice": 0.5729917295441862,
+        "hd95": 97.62969528900359
+      },
+      "per_case": [
+        {
+          "case": "ISIC_0010018",
+          "dice": 0.8675723978679994,
+          "hd95": 52.970227269466434
+        },
+        {
+          "case": "ISIC_0010020",
+          "dice": 0.13146494089960956,
+          "hd95": 138.23366724326408
+        },
+        {
+          "case": "ISIC_0010023",
+          "dice": 0.6233055091819699,
+          "hd95": 112.39661353206195
+        },
+        {
+          "case": "ISIC_0010028",
+          "dice": 0.6696240702271661,
+          "hd95": 86.9182731112219
+        }
+      ]
+    }
+  },
+  "MedSA": {
+    "clean": {
+      "dice": 0.9385659605264663,
+      "hd95": 2.9740138998156627,
+      "iou": 0.8860572758750378
+    },
+    "ctearly010": {
+      "dice": 0.7658160403370857,
+      "hd95": 26.188286268439548,
+      "iou": 0.644167994037963
+    }
+  },
+  "MedSA_per_case_paired": {
+    "clean": [
+      {
+        "case": "ISIC_0010018",
+        "dice": 0.953059983253479,
+        "hd95": 1.2
+      },
+      {
+        "case": "ISIC_0010020",
+        "dice": 0.9132853388786316,
+        "hd95": 7.359797974644667
+      },
+      {
+        "case": "ISIC_0010023",
+        "dice": 0.9380432009696961,
+        "hd95": 2.4181665299405117
+      },
+      {
+        "case": "ISIC_0010028",
+        "dice": 0.9375690579414367,
+        "hd95": 2.921110255092798
+      }
+    ],
+    "ctearly010": [
+      {
+        "case": "ISIC_0010018",
+        "dice": 0.9217352628707886,
+        "hd95": 4.6467751803785
+      },
+      {
+        "case": "ISIC_0010020",
+        "dice": 0.7717892050743103,
+        "hd95": 27.234215574375632
+      },
+      {
+        "case": "ISIC_0010023",
+        "dice": 0.840495765209198,
+        "hd95": 42.49294468787225
+      },
+      {
+        "case": "ISIC_0010028",
+        "dice": 0.815982460975647,
+        "hd95": 14.194610938779155
+      }
+    ]
+  }
+}

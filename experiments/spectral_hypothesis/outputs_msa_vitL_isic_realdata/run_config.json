@@ -1,0 +1,23 @@
+{
+  "target": "msa",
+  "ckpt_fs": "/root/data2/fyc/fyc/GRAT-main/checkpoints/sam_vit_l_0b3195.pth",
+  "lora_ckpt": "",
+  "msa_ckpt": "/root/data2/fyc/fyc/GRAT-main/OUT_ROOT/MedicalSAMAdapter/isic_256_pretrain_vit_l_epo100_bs1_lr0.0001_s24/Model/best_dice_checkpoint.pth",
+  "sam_ckpt_msa": "/root/data2/fyc/fyc/GRAT-main/checkpoints/sam_vit_l_0b3195.pth",
+  "img_size": 256,
+  "num_classes": 9,
+  "rank": 4,
+  "multimask_output": 1,
+  "dataset_tag": "isic",
+  "num_images": 200,
+  "data_path": "/root/data2/fyc/fyc/GRAT-main/data/ISIC",
+  "batch_size": 4,
+  "block_indices": "0,5,11,17,23",
+  "mask_tau": 0.001,
+  "tau_sweep": "1e-4,1e-3,1e-2",
+  "use_log_amp": false,
+  "preprocess": "imagenet",
+  "out_dir": "/root/data2/fyc/fyc/GRAT-main/experiments/spectral_hypothesis/outputs_msa_vitL_isic_realdata",
+  "device": "cuda",
+  "note": "Block hooks: ViT Block forward output after full residual (matches root SAM feature_layer). Preprocess: same pixel_mean/std for f_s and f_t; MSA uses same x_in as SAM (no separate net.preprocess). Mode=imagenet."
+}

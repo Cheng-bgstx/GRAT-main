@@ -1,0 +1,92 @@
+{
+  "Synapse": {
+    "Synapse_SAMed": {
+      "clean_dices": [
+        0.19947080293165192
+      ],
+      "adv_dices": [
+        0.1864483823052405
+      ],
+      "dice_drops": [
+        0.01302242062641143
+      ],
+      "mean_clean_dice": 0.19947080293165192,
+      "mean_adv_dice": 0.1864483823052405,
+      "mean_dice_drop": 0.01302242062641143
+    },
+    "Synapse_MSA": {
+      "clean_dices": [
+        0.31500683796443424
+      ],
+      "adv_dices": [
+        0.31619049733930216
+      ],
+      "dice_drops": [
+        -0.001183659374867918
+      ],
+      "mean_clean_dice": 0.31500683796443424,
+      "mean_adv_dice": 0.31619049733930216,
+      "mean_dice_drop": -0.001183659374867918
+    }
+  },
+  "ISIC": {
+    "ISIC_SAMed": {
+      "clean_dices": [
+        0.6631849154771725
+      ],
+      "adv_dices": [
+        0.601810706215654
+      ],
+      "dice_drops": [
+        0.061374209261518486
+      ],
+      "mean_clean_dice": 0.6631849154771725,
+      "mean_adv_dice": 0.601810706215654,
+      "mean_dice_drop": 0.061374209261518486
+    },
+    "ISIC_MSA": {
+      "clean_dices": [
+        0.9634285846341724
+      ],
+      "adv_dices": [
+        0.953205937909161
+      ],
+      "dice_drops": [
+        0.010222646725011386
+      ],
+      "mean_clean_dice": 0.9634285846341724,
+      "mean_adv_dice": 0.953205937909161,
+      "mean_dice_drop": 0.010222646725011386
+    }
+  },
+  "REFUGE": {
+    "REFUGE_SAMed": {
+      "clean_dices": [
+        0.0
+      ],
+      "adv_dices": [
+        0.001141779189832634
+      ],
+      "dice_drops": [
+        -0.001141779189832634
+      ],
+      "mean_clean_dice": 0.0,
+      "mean_adv_dice": 0.001141779189832634,
+      "mean_dice_drop": -0.001141779189832634
+    },
+    "REFUGE_MSA": {
+      "clean_dices": [
+        0.06967089826121484
+      ],
+      "adv_dices": [
+        0.09540653402107815
+      ],
+      "dice_drops": [
+        -0.025735635759863318
+      ],
+      "mean_clean_dice": 0.06967089826121484,
+      "mean_adv_dice": 0.09540653402107815,
+      "mean_dice_drop": -0.025735635759863318
+    }
+  }
+}

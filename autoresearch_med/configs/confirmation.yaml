@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "tier": 3,
+  "locked_on": "2026-10-11",
+  "dataset": "ISIC2016_Test",
+  "manifest": "autoresearch_med/manifests/confirmation.json",
+  "candidate_generation_config": "autoresearch_med/configs/source_only.yaml",
+  "one_time_only": true,
+  "automatic_search_access": true,
+  "requires_frozen_candidate_hash": true,
+  "requires_research_stage_confirmation": true
+}

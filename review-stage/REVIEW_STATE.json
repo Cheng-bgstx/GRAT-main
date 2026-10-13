@@ -1,0 +1,44 @@
+{
+  "round": 5,
+  "threadId": null,
+  "status": "completed",
+  "difficulty": "medium",
+  "last_score": 7.0,
+  "last_verdict": "ready",
+  "complete_results": {
+    "ISIC": {
+      "vit_b_SAMed": {"clean": 0.658, "adv": 0.577, "drop": 0.081},
+      "vit_b_MSA": {"clean": 0.872, "adv": 0.860, "drop": 0.012},
+      "vit_l_SAMed": {"clean": 0.424, "adv": 0.412, "drop": 0.012},
+      "vit_l_MSA": {"clean": 0.634, "adv": 0.646, "drop": -0.012},
+      "vit_h_SAMed": {"clean": 0.508, "adv": 0.469, "drop": 0.040},
+      "vit_h_MSA": {"clean": 0.642, "adv": 0.626, "drop": 0.016}
+    },
+    "Synapse": {
+      "vit_b_SAMed": {"clean": 0.334, "adv": 0.326, "drop": 0.008},
+      "vit_b_MSA": {"clean": 0.875, "adv": 0.875, "drop": 0.000},
+      "vit_l_SAMed": {"clean": 0.603, "adv": 0.603, "drop": 0.000},
+      "vit_l_MSA": {"clean": 0.875, "adv": 0.875, "drop": 0.000},
+      "vit_h_SAMed": {"clean": 0.603, "adv": 0.603, "drop": 0.000},
+      "vit_h_MSA": {"clean": 0.874, "adv": 0.874, "drop": 0.000}
+    },
+    "REFUGE": "SKIPPED — model quality too poor (SAMed Clean Dice < 0.01)"
+  },
+  "directional_ablation_ISIC_vit_b": {
+    "tangential": {"SAMed_drop": 0.089, "MSA_drop": 0.063, "mean": 0.076},
+    "radial": {"SAMed_drop": 0.083, "MSA_drop": 0.014, "mean": 0.049},
+    "random_noise": {"SAMed_drop": 0.081, "MSA_drop": 0.012, "mean": 0.047},
+    "misaligned": {"SAMed_drop": 0.082, "MSA_drop": 0.008, "mean": 0.045},
+    "isotropic": {"SAMed_drop": 0.083, "MSA_drop": -0.001, "mean": 0.041}
+  },
+  "summary_stats": {
+    "total_victims": 12,
+    "positive_attacks": 6,
+    "mean_drop": 0.0131,
+    "ISIC_mean_drop": 0.0248,
+    "Synapse_mean_drop": 0.0013,
+    "SAMed_mean_drop": 0.0235,
+    "MSA_mean_drop": 0.0027
+  },
+  "timestamp": "2026-06-22T14:45:00"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "layer": "neck",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  },
+  {
+    "layer": "block_0",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  },
+  {
+    "layer": "block_5",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  },
+  {
+    "layer": "block_11",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  },
+  {
+    "layer": "block_17",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  },
+  {
+    "layer": "block_23",
+    "wilcoxon_stat": NaN,
+    "p_value": NaN
+  }
+]

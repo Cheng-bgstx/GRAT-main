@@ -1,0 +1,26 @@
+{
+  "protocol": {
+    "case": "case0001",
+    "slice": 123,
+    "vit": "vit_b",
+    "steps": 10,
+    "epsilon_255": 10.0,
+    "step_size_255": 2.0,
+    "samed_evaluator": "test_samed.test_single_volume",
+    "medsa_evaluator": "Medical-SAM-Adapter-main/function.validation_sam",
+    "medsa_prompt_seed": 24
+  },
+  "official": {
+    "clean": {"SAMed": [0.9388299517, 0.6840169944], "MedSA": [0.9397686764, 1.2039529676]},
+    "H_stochastic_artifact": {"SAMed": [0.1759756277, 401.1853613706], "MedSA": [0.8840500176, 9.9385652407]},
+    "K0": {"SAMed": [0.9239382643, 0.9013878189], "MedSA": [0.8525827061, 0.5]},
+    "K0_0.10_H_0.90": {"SAMed": [0.2196331621, 393.0121733404], "MedSA": [0.8779038706, 10.1245233875]}
+  },
+  "rejected": {
+    "frequency_rank_tail_J_medsa_dice": 0.9051981124,
+    "per_step_path_average_L_medsa_dice": 0.8775079574,
+    "spectral_ellipsoid_N_medsa_dice": 0.9257185416,
+    "frequency_splicing_medsa_dice_range": [0.9163322040, 0.9445260966]
+  },
+  "decision": "gate_failed_no_full_matrix"
+}

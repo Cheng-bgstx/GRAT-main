@@ -1,0 +1,156 @@
+{
+  "protocol": {
+    "backbone": "vit_b",
+    "candidates": [
+      "carrier",
+      "joint"
+    ],
+    "derivative_step": 0.02,
+    "diagnostic_only": true,
+    "indices": [
+      220
+    ],
+    "layers": [
+      0,
+      5,
+      11,
+      "neck"
+    ],
+    "path_samples": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "source_only": true,
+    "target_access": false
+  },
+  "rows": [
+    {
+      "alternating_sign_control_consistency": 0.1823176681482127,
+      "candidate": "carrier",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 1047.7373046875,
+      "index": 220,
+      "integrated_norm": 1498.054458618164,
+      "integrated_response_norm": 1029.6644287109375,
+      "layer": "0",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.6408092677593231,
+      "mean_sign_reversal_fraction": 0.2751331441104412,
+      "path_consistency": 0.6873344442102064,
+      "quadrature_residual_ratio": 0.06549943149672424
+    },
+    {
+      "alternating_sign_control_consistency": 0.34472348064559993,
+      "candidate": "carrier",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 900.4368896484375,
+      "index": 220,
+      "integrated_norm": 1532.7114715576172,
+      "integrated_response_norm": 883.1691284179688,
+      "layer": "5",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.39904031343758106,
+      "mean_sign_reversal_fraction": 0.3854306638240814,
+      "path_consistency": 0.5762135566979535,
+      "quadrature_residual_ratio": 0.3258601205279718
+    },
+    {
+      "alternating_sign_control_consistency": 0.3518975636584389,
+      "candidate": "carrier",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 1780.510498046875,
+      "index": 220,
+      "integrated_norm": 2942.2236328125,
+      "integrated_response_norm": 1717.1575927734375,
+      "layer": "11",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.33583565801382065,
+      "mean_sign_reversal_fraction": 0.393172912299633,
+      "path_consistency": 0.5836257902435479,
+      "quadrature_residual_ratio": 0.2455869836860725
+    },
+    {
+      "alternating_sign_control_consistency": 0.34727003229417536,
+      "candidate": "carrier",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 52.307315826416016,
+      "index": 220,
+      "integrated_norm": 79.91046905517578,
+      "integrated_response_norm": 49.568634033203125,
+      "layer": "neck",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.3579176403582096,
+      "mean_sign_reversal_fraction": 0.37860965728759766,
+      "path_consistency": 0.6203021283603963,
+      "quadrature_residual_ratio": 0.20087384460192637
+    },
+    {
+      "alternating_sign_control_consistency": 0.14761739128269066,
+      "candidate": "joint",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 859.2752075195312,
+      "index": 220,
+      "integrated_norm": 1176.310417175293,
+      "integrated_response_norm": 842.8757934570312,
+      "layer": "0",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.7345781028270721,
+      "mean_sign_reversal_fraction": 0.23797544836997986,
+      "path_consistency": 0.7165419783334508,
+      "quadrature_residual_ratio": 0.059359960300787766
+    },
+    {
+      "alternating_sign_control_consistency": 0.3281048336281689,
+      "candidate": "joint",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 948.2405395507812,
+      "index": 220,
+      "integrated_norm": 1429.1787033081055,
+      "integrated_response_norm": 920.021728515625,
+      "layer": "5",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.5207735653966665,
+      "mean_sign_reversal_fraction": 0.3282706066966057,
+      "path_consistency": 0.6437415603703441,
+      "quadrature_residual_ratio": 0.27488786830409656
+    },
+    {
+      "alternating_sign_control_consistency": 0.41206422217670535,
+      "candidate": "joint",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 2030.64013671875,
+      "index": 220,
+      "integrated_norm": 3264.0584564208984,
+      "integrated_response_norm": 2057.043701171875,
+      "layer": "11",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.4080326557159424,
+      "mean_sign_reversal_fraction": 0.3632570952177048,
+      "path_consistency": 0.6302104354550875,
+      "quadrature_residual_ratio": 0.279762241115181
+    },
+    {
+      "alternating_sign_control_consistency": 0.4466591182005796,
+      "candidate": "joint",
+      "case": "ISIC_0010009",
+      "endpoint_magnitude": 59.962066650390625,
+      "index": 220,
+      "integrated_norm": 93.62078642845154,
+      "integrated_response_norm": 61.376251220703125,
+      "layer": "neck",
+      "linf_255": 10.000007003545761,
+      "mean_adjacent_cosine": 0.4088436458259821,
+      "mean_sign_reversal_fraction": 0.35776519775390625,
+      "path_consistency": 0.6555835895227085,
+      "quadrature_residual_ratio": 0.2706252159848374
+    }
+  ],
+  "summary": {
+    "max_quadrature_residual_ratio": 0.3258601205279718,
+    "mean_alternating_control_consistency": 0.3200817887543214,
+    "mean_path_consistency": 0.6391941853992118
+  }
+}

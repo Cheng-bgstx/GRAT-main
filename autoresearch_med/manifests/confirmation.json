@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "dataset": "ISIC2016_Test",
+  "frozen_on": "2026-10-11",
+  "purpose": "One-time prospective confirmation after method freeze",
+  "indices": [240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255],
+  "samples": [
+    {"index": 240, "case": "ISIC_0010077", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010077.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010077_Segmentation.png"},
+    {"index": 241, "case": "ISIC_0010088", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010088.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010088_Segmentation.png"},
+    {"index": 242, "case": "ISIC_0010089", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010089.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010089_Segmentation.png"},
+    {"index": 243, "case": "ISIC_0010092", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010092.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010092_Segmentation.png"},
+    {"index": 244, "case": "ISIC_0010100", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010100.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010100_Segmentation.png"},
+    {"index": 245, "case": "ISIC_0010103", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010103.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010103_Segmentation.png"},
+    {"index": 246, "case": "ISIC_0010171", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010171.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010171_Segmentation.png"},
+    {"index": 247, "case": "ISIC_0010173", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010173.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010173_Segmentation.png"},
+    {"index": 248, "case": "ISIC_0010175", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010175.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010175_Segmentation.png"},
+    {"index": 249, "case": "ISIC_0010180", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010180.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010180_Segmentation.png"},
+    {"index": 250, "case": "ISIC_0010183", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010183.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010183_Segmentation.png"},
+    {"index": 251, "case": "ISIC_0010187", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010187.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010187_Segmentation.png"},
+    {"index": 252, "case": "ISIC_0010190", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010190.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010190_Segmentation.png"},
+    {"index": 253, "case": "ISIC_0010192", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010192.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010192_Segmentation.png"},
+    {"index": 254, "case": "ISIC_0010193", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010193.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010193_Segmentation.png"},
+    {"index": 255, "case": "ISIC_0010201", "image": "ISBI2016_ISIC_Part1_Test_Data/ISIC_0010201.jpg", "mask": "ISBI2016_ISIC_Part1_Test_GroundTruth/ISIC_0010201_Segmentation.png"}
+  ],
+  "historical_untouched_claim": "not_proven",
+  "eligible_for_method_selection": false,
+  "automatic_access": false
+}

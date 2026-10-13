@@ -1,0 +1,65 @@
+{
+  "status": "mechanism_gate_failed_online_objective_not_selected",
+  "date": "2026-10-11",
+  "theory": "Adaptation-Coupled Response Stability",
+  "dataset": "ISIC",
+  "backbone": "vit_b",
+  "indices": [220, 221, 222, 223],
+  "candidates": ["carrier", "joint"],
+  "targets": [
+    "rank16_samed",
+    "seed45_samed",
+    "default_medsa",
+    "seed45_medsa"
+  ],
+  "layers": [0, 5, 11, "neck"],
+  "reference_protocol": {
+    "lora": "public SAM under source ImageNet normalization",
+    "adapter": "Medical-SAM-Adapter architecture with zero adapter residuals and ISIC preprocessing",
+    "fft_axes": "explicit BCHW spatial H/W",
+    "post_hoc_only": true
+  },
+  "structure": {
+    "same_lora_mean_cosine": 0.3113048420054838,
+    "same_adapter_mean_cosine": 0.49551314674317837,
+    "cross_family_mean_cosine": 0.2181614325963892,
+    "cross_family_positive_fraction": 0.9765625,
+    "cross_family_layer_mean": {
+      "0": 0.06624915660358965,
+      "5": 0.25239531975239515,
+      "11": 0.2834847401827574,
+      "neck": 0.27051651384681463
+    }
+  },
+  "grouped_prediction": {
+    "baseline_source_strength": {
+      "mae": 0.15995193157853319,
+      "prediction_correlation": 0.7219497892212614
+    },
+    "extended_source_observables": {
+      "mae": 0.15250205721753263,
+      "prediction_correlation": 0.7230181678309534,
+      "mae_improvement_fraction": 0.046575707385833096
+    },
+    "posthoc_true_acrs": {
+      "mae": 0.15528094221774819,
+      "prediction_correlation": 0.7298901353620884,
+      "mae_improvement_fraction": 0.02920245672989349
+    }
+  },
+  "decision_rules": {
+    "cross_family_mean_cosine_gt_0.2": true,
+    "cross_family_positive_fraction_ge_0.6": true,
+    "true_acrs_mae_improvement_ge_0.1": false,
+    "source_observable_mae_improvement_ge_0.05": false
+  },
+  "conclusion": [
+    "A weak, mostly positive late-depth response component is shared across LoRA and Adapter targets.",
+    "Neither true ACRS mismatch nor source-only layer/frequency observables add enough held-out Dice predictive value.",
+    "Frequency remains a diagnostic coordinate and no ACRS online attack loss is selected.",
+    "GR-only remains an external baseline; Joint Pareto remains a separate proxy-assisted empirical branch."
+  ],
+  "source_sha256": {
+    "raw_gate": "d157f1d5104d9cbee274f6213f630b2e61e34cc0f37e1a37f9afb6c62dbc2ea7"
+  }
+}

@@ -1,0 +1,25 @@
+root_path: 
+output: 
+dataset: Synapse
+list_dir: /root/data2/fyc/fyc/GRAT-main/data/Synapse_preprocess/lists
+num_classes: 8
+max_iterations: 30000
+max_epochs: 200
+stop_epoch: 160
+batch_size: 12
+n_gpu: 1
+deterministic: 1
+base_lr: 0.0001
+img_size: 512
+seed: 1234
+vit_name: vit_l
+ckpt: /root/data2/fyc/fyc/GRAT-main/checkpoints/sam_vit_l_0b3195.pth
+lora_ckpt: None
+rank: 16
+warmup: True
+warmup_period: 250
+AdamW: True
+module: sam_lora_image_encoder
+dice_param: 0.8
+is_pretrain: True
+exp: Synapse_512
