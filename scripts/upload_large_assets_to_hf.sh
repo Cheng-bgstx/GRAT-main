@@ -28,18 +28,27 @@ upload_path() {
   fi
 }
 
+upload_path migration_assets.tsv
 upload_path checkpoints
-upload_path data
-upload_path testset
-upload_path results
-upload_path output
-upload_path output_runs_correct
-upload_path adv_outputs
 upload_path common_perb
 upload_path ddta
-upload_path new/test_runs
-upload_path newest/output
-upload_path robot/pace_gen_transfer.tar.gz
+upload_path newest/offline_priors
+
+find new -maxdepth 1 -type f -name '*.pth' -print0 2>/dev/null | while IFS= read -r -d '' path; do
+  upload_path "$path"
+done
+
+if [ "${INCLUDE_BULK:-0}" = "1" ]; then
+  upload_path data
+  upload_path testset
+  upload_path results
+  upload_path output
+  upload_path output_runs_correct
+  upload_path adv_outputs
+  upload_path new/test_runs
+  upload_path newest/output
+  upload_path robot/pace_gen_transfer.tar.gz
+fi
 
 find . -maxdepth 3 -type f \( \
   -name '*.pth' -o -name '*.pt' -o -name '*.ckpt' -o -name '*.safetensors' -o \
@@ -49,7 +58,7 @@ find . -maxdepth 3 -type f \( \
 \) -print0 | while IFS= read -r -d '' path; do
   rel="${path#./}"
   case "$rel" in
-    checkpoints/*|data/*|testset/*|results/*|output/*|output_runs_correct/*|adv_outputs/*|common_perb/*|ddta/*|new/test_runs/*|newest/output/*|robot/pace_gen_transfer.tar.gz)
+    checkpoints/*|data/*|testset/*|results/*|output/*|output_runs_correct/*|adv_outputs/*|common_perb/*|ddta/*|new/test_runs/*|newest/output/*|newest/offline_priors/*|robot/pace_gen_transfer.tar.gz|new/*.pth)
       ;;
     *)
       hf upload "$repo_id" "$rel" "$rel" --repo-type "$repo_type" "${token_args[@]}"

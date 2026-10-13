@@ -3,7 +3,7 @@
 This repository is prepared for a split migration:
 
 - GitHub: source code, docs, configs, scripts, and small reference assets.
-- Hugging Face Hub: model weights, checkpoints, medical data, adversarial samples, prediction volumes, and large experiment artifacts.
+- Hugging Face Hub: reusable model weights, checkpoints, offline priors, and an asset manifest.
 
 ## Why weights should not go to normal GitHub
 
@@ -20,6 +20,17 @@ Examples from the local scan:
 - `checkpoints/sam_vit_l_0b3195.pth` around 1.2 GB
 - `data/SA-1B/sa_000000.tar` through `sa_000002.tar` around 800 MB each
 - many `testset/**/*.h5`, `data/**/*.h5`, `results/**/*.nii.gz`, and `output/**/*.pth` artifacts
+
+By default, do not upload `data/`, `testset/`, `output_runs_correct/`, `results/`, or `output/`. They are large raw data, generated adversarial samples, predictions, logs, and historical training outputs. Keep them local unless a specific experiment requires publishing them and the dataset licenses allow redistribution.
+
+The default Hugging Face upload script includes:
+
+- `migration_assets.tsv`
+- `checkpoints/`
+- `common_perb/`
+- `ddta/`
+- `new/*.pth`
+- `newest/offline_priors/`
 
 Generate a full local manifest with:
 
@@ -55,6 +66,12 @@ Then upload large assets with:
 
 ```bash
 scripts/upload_large_assets_to_hf.sh <namespace>/<dataset-or-model-repo> dataset
+```
+
+To upload bulk generated data as well, opt in explicitly:
+
+```bash
+INCLUDE_BULK=1 scripts/upload_large_assets_to_hf.sh <namespace>/<dataset-or-model-repo> dataset
 ```
 
 Use `model` instead of `dataset` if the target repository should be a model repository.
