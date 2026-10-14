@@ -14,7 +14,7 @@ if ! command -v hf >/dev/null 2>&1; then
   exit 1
 fi
 
-if ! hf auth whoami "${token_args[@]}" >/dev/null 2>&1; then
+if ! hf auth whoami >/dev/null 2>&1; then
   echo "Hugging Face CLI is not logged in. Run: hf auth login, or set HF_TOKEN." >&2
   exit 1
 fi
