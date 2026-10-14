@@ -30,26 +30,27 @@ upload_path() {
 
 upload_path migration_assets.tsv
 
-# Default publish set: the 18 reusable weights needed for normal reuse.
+# Default publish set: SAMed and Medical-SAM-Adapter reusable weights.
+# This is 2 methods x 3 datasets x 3 SAM backbones = 18 files.
 default_weights=(
-  checkpoints/sam_vit_b_01ec64.pth
-  checkpoints/sam_vit_h_4b8939.pth
-  checkpoints/sam_vit_l_0b3195.pth
-  common_perb/ISIC.pth
-  common_perb/ISIC_universal.pth
-  common_perb/REFUGE.pth
-  common_perb/REFUGE_universal.pth
-  common_perb/Synapse.pth
-  common_perb/common_perturbation_meta_0.025sp_bound2_it7batchit41upsize_ls0.0025mulmd0_10000.pth
-  new/offline_codd_isic_vit_b.pth
-  new/offline_codd_isic_vit_h.pth
-  new/offline_codd_isic_vit_l.pth
-  new/offline_codd_refuge_vit_b.pth
-  new/offline_codd_refuge_vit_h.pth
-  new/offline_codd_refuge_vit_l.pth
-  new/offline_codd_synapse_vit_b.pth
-  new/offline_codd_synapse_vit_h.pth
-  new/offline_codd_synapse_vit_l.pth
+  output_runs_correct/SAMed/Synapse_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth
+  output_runs_correct/SAMed/Synapse_512_pretrain_vit_l_epo300_bs12_lr0.005/epoch_249.pth
+  output_runs_correct/SAMed/Synapse_512_pretrain_vit_h_epo200_bs6_lr0.005/epoch_299.pth
+  output_runs_correct/SAMed/REFUGE_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_199.pth
+  output_runs_correct/SAMed/REFUGE_512_pretrain_vit_l_epo300_bs12_lr0.005/epoch_299.pth
+  output_runs_correct/SAMed/REFUGE_512_pretrain_vit_h_epo300_bs8_lr0.005/epoch_299.pth
+  output_runs_correct/SAMed/isic_512_pretrain_vit_b_epo200_bs12_lr0.005/epoch_159.pth
+  output_runs_correct/SAMed/isic_512_pretrain_vit_l_epo300_bs12_lr0.005/epoch_249.pth
+  output_runs_correct/SAMed/isic_512_pretrain_vit_h_epo300_bs8_lr0.005/epoch_249.pth
+  output_runs_correct/MedicalSAMAdapter/Synapse_512_pretrain_vit_b_epo100_bs12_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/Synapse_512_pretrain_vit_l_epo100_bs12_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/Synapse_512_pretrain_vit_h_epo100_bs6_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/REFUGE_512_pretrain_vit_b_epo100_bs24_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/REFUGE_512_pretrain_vit_l_epo100_bs12_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/REFUGE_512_pretrain_vit_h_epo100_bs6_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/isic_512_pretrain_vit_b_epo100_bs24_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/isic_512_pretrain_vit_l_epo100_bs16_lr0.0001_s24/Model/best_dice_checkpoint.pth
+  output_runs_correct/MedicalSAMAdapter/isic_512_pretrain_vit_h_epo100_bs8_lr0.0001_s24/Model/best_dice_checkpoint.pth
 )
 
 for path in "${default_weights[@]}"; do

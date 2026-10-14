@@ -23,12 +23,11 @@ Examples from the local scan:
 
 By default, do not upload `data/`, `testset/`, `output_runs_correct/`, `results/`, or `output/`. They are large raw data, generated adversarial samples, predictions, logs, and historical training outputs. Keep them local unless a specific experiment requires publishing them and the dataset licenses allow redistribution.
 
-The default Hugging Face upload script includes only the 18 reusable weights:
+The default Hugging Face upload script includes only the 18 reusable SAMed and Medical-SAM-Adapter weights:
 
 - `migration_assets.tsv`
-- 3 SAM backbone checkpoints in `checkpoints/`
-- 6 common perturbation weights in `common_perb/`
-- 9 offline CODD weights in `new/`
+- 9 SAMed checkpoints from `output_runs_correct/SAMed/`
+- 9 Medical-SAM-Adapter `best_dice_checkpoint.pth` files from `output_runs_correct/MedicalSAMAdapter/`
 
 Generate a full local manifest with:
 
