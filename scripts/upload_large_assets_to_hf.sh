@@ -29,23 +29,44 @@ upload_path() {
 }
 
 upload_path migration_assets.tsv
-upload_path checkpoints
-upload_path common_perb
-upload_path ddta
-upload_path newest/offline_priors
 
-find new -maxdepth 1 -type f -name '*.pth' -print0 2>/dev/null | while IFS= read -r -d '' path; do
+# Default publish set: the 18 reusable weights needed for normal reuse.
+default_weights=(
+  checkpoints/sam_vit_b_01ec64.pth
+  checkpoints/sam_vit_h_4b8939.pth
+  checkpoints/sam_vit_l_0b3195.pth
+  common_perb/ISIC.pth
+  common_perb/ISIC_universal.pth
+  common_perb/REFUGE.pth
+  common_perb/REFUGE_universal.pth
+  common_perb/Synapse.pth
+  common_perb/common_perturbation_meta_0.025sp_bound2_it7batchit41upsize_ls0.0025mulmd0_10000.pth
+  new/offline_codd_isic_vit_b.pth
+  new/offline_codd_isic_vit_h.pth
+  new/offline_codd_isic_vit_l.pth
+  new/offline_codd_refuge_vit_b.pth
+  new/offline_codd_refuge_vit_h.pth
+  new/offline_codd_refuge_vit_l.pth
+  new/offline_codd_synapse_vit_b.pth
+  new/offline_codd_synapse_vit_h.pth
+  new/offline_codd_synapse_vit_l.pth
+)
+
+for path in "${default_weights[@]}"; do
   upload_path "$path"
 done
 
 if [ "${INCLUDE_BULK:-0}" = "1" ]; then
   upload_path data
+  upload_path checkpoints
   upload_path testset
   upload_path results
   upload_path output
   upload_path output_runs_correct
   upload_path adv_outputs
+  upload_path ddta
   upload_path new/test_runs
+  upload_path newest/offline_priors
   upload_path newest/output
   upload_path robot/pace_gen_transfer.tar.gz
 fi
